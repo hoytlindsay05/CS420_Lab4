@@ -38,7 +38,6 @@ public class ProcessImpl extends UnicastRemoteObject implements Process {
     }
 
     private void grantAccess(int requestingProcessId) throws RemoteException {
-        // Granting logic here; you may modify this based on your requirements
         System.out.println("Process " + processId + " is granting access to Process " + requestingProcessId);
         // Simulate entering the critical section
         inCriticalSection = true;
@@ -56,6 +55,5 @@ public class ProcessImpl extends UnicastRemoteObject implements Process {
     @Override
     public synchronized void releaseCriticalSection() throws RemoteException {
         System.out.println("Process " + processId + " is releasing the critical section.");
-        // Logic to notify other processes that the critical section is free
     }
 }
